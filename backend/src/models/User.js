@@ -22,7 +22,7 @@ const userSchema=new mongoose.Schema(
     },
     role:{
       type:String,
-      enum:["admin","airline","baggage","user"],
+      enum:["admin","airline","baggage"],
       default:"airline",
     },},{timestamps:true});
 
