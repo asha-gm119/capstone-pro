@@ -9,6 +9,7 @@ export const api = axios.create({
 });
 
 export function attachToken(getToken, logout) {
+  //Axios interceptor automatically adds token to headers
   api.interceptors.request.use((config) => {
     const token = getToken?.();
     if (token) config.headers.Authorization = `Bearer ${token}`;
@@ -22,7 +23,7 @@ export function attachToken(getToken, logout) {
       const msg = err?.response?.data?.error || err?.message || "Error";
       if (status === 401 || status === 403) {
         toast.error(`${status}: ${msg}`);
-        logout?.();
+        logout?.(); // Clears token and user state
       } else {
         // Surface server-side validation details if available
         const detail = err?.response?.data?.errors?.[0]?.msg;

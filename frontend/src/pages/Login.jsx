@@ -554,7 +554,7 @@ export default function Login() {
   useEffect(() => {
     // Trigger animations after component mounts
     setAnimate(true);
-  }, []);
+  },[]);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });

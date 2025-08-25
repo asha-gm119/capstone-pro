@@ -81,7 +81,7 @@ export default function Navbar() {
               WebkitTextFillColor: "transparent",
             }}
           >
-            AirOps
+            AeroFlow
           </Typography>
         )}
         <IconButton size="small" onClick={toggleCollapse}>
